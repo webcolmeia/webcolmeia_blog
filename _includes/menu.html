@@ -1,0 +1,11 @@
+<nav>
+    <ul class="flex items-center text-white uppercase">
+    {% for item in site.data.navigation %}
+        <li>
+            <a href="{{ site.baseurl }}{{ item.url }}" class="font-bold py-3 px-6 rounded-full hover:bg-secondary-light {% if page.url == item.url %} text-primary-light{% endif %}">
+                {{ item.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% if page.title %}
+    <title>{{ page.title }} | {{ site.title }}</title>
+    {% else %}
+    <title>{{ site.title }}</title>
+    {% endif %}
+
+    <!-- CSS Flickity -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
 </head>
-<body>
-    <header id="header" class="p-5 shadow-lg flex justify-center sticky top-0">
+<body class="bg-gray-100">
+    <header id="header" class="p-5 shadow-lg flex justify-center sticky top-0 bg-white">
         <div class="container flex justify-between items-center">
             <div class="logo uppercase text-2xl font-bold text-primary-light">
                 <a href="{{ site.baseurl }}">
                     <img src="{{ site.baseurl }}/assets/img/logo.png" />
                 </a>
             </div>
+            {% include menu.html %}
         </div>
     </header>
